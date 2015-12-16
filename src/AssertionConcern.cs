@@ -125,5 +125,47 @@ namespace DomainNotificationHelper.Validation
                 ? new DomainNotification("AssertUrlIsInvalid", message)
                 : null;
         }
+
+        public static DomainNotification AssertDateIsEqualThan(DateTime date1, DateTime date2, string message)
+        {
+            return (!(date1.CompareTo(date2) == 0))
+                ? new DomainNotification("AssertArgumentTrue", message)
+                : null;
+        }
+
+        public static DomainNotification AssertDateIsNotEqualThan(DateTime date1, DateTime date2, string message)
+        {
+            return ((date1.CompareTo(date2) == 0))
+                ? new DomainNotification("AssertArgumentTrue", message)
+                : null;
+        }
+
+        public static DomainNotification AssertDateIsAfterThan(DateTime date1, DateTime date2, string message)
+        {
+            return (!(date1.CompareTo(date2) > 0))
+                ? new DomainNotification("AssertArgumentTrue", message)
+                : null;
+        }
+
+        public static DomainNotification AssertDateIsAfterOrEqualThan(DateTime date1, DateTime date2, string message)
+        {
+            return (!(date1.CompareTo(date2) >= 0))
+                ? new DomainNotification("AssertArgumentTrue", message)
+                : null;
+        }
+
+        public static DomainNotification AssertDateIsBeforeThan(DateTime date1, DateTime date2, string message)
+        {
+            return (!(date1.CompareTo(date2) < 0))
+                ? new DomainNotification("AssertArgumentTrue", message)
+                : null;
+        }
+
+        public static DomainNotification AssertDateIsBeforeOrEqualThan(DateTime date1, DateTime date2, string message)
+        {
+            return (!(date1.CompareTo(date2) <= 0))
+                ? new DomainNotification("AssertArgumentTrue", message)
+                : null;
+        }
     }
 }
